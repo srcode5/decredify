@@ -1,3 +1,5 @@
+#### This image gives a quick code overview. Refer steps given below for step-wise instructions on how to run the code
+
 ![decredifi_code_overview_image](DeCrediFi_Code_Demo.gif?raw=true "DeCrediFi_Code_Overview")
 
 
