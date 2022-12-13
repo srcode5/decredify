@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r esm server.js",
+    "start:node": "node -r esm server.js",
+    "start:prod": "env-cmd -f ./.env.production npm run start:node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "antd": "^4.16.7",
+    "bcryptjs": "^2.4.3",
+    "btoa": "^1.2.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "emailjs-com": "^2.6.4",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-jwt": "^6.0.0",
+    "image-to-base64": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.2",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-countdown": "^2.3.2",
+    "sendmail": "^1.6.1",
+    "stripe": "^8.161.0",
+    "truffle-contract": "^4.0.31",
+    "web3": "^1.8.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
+}
