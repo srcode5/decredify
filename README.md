@@ -68,6 +68,7 @@ check_if_valid = tranche_structure(pool_id ="Test Pool",
  ```                                
 #### Step-4: Distribute periodic cashflows to tranche investors using waterfall mechanism
 ##### this function would internally call allocate_payment, cashflow_dist, make_periodic_payment functions
+##### Make sure you have Algorand Testnet running before this command
   
 ###### One can use their wallet addresses instead of these test addresses
 ```
