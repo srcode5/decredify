@@ -1,28 +1,28 @@
 #### Step-1: decredify-core would need Algorand Sandbox Setup for recording the transactions on Algorand Testnet
-'''
+```
 git clone https://github.com/algorand/sandbox.git
 cd sandbox
 ./sandbox up testnet
-'''
+```
 Refer https://github.com/algorand/sandbox for detailed instructions
 
 
 #### Step-2: Create Test wallet addresses (or use the ones we provide), and goto Testnet faucet to fund them
 #create few test accounts on TestNet and fund them
-'''
+```
 from algosdk import account
 from algosdk import mnemonic
 
 private_key, public_address = account.generate_account()
 print("Base64 Private Key: {}\nPublic Algorand Address: {}\n".format(private_key, public_address))
 mnemonic.from_private_key(private_key)
-'''
+```
 ##### https://dispenser.testnet.aws.algodev.network/ to goto faucet for dispensing miniAlgos
 
 
 #### Step-3: Check if a tranche structure is valid
 ##### This function will internally call four functions: posterior_pd, pool_wcl, pool_lgd, tranche_structure
-'''
+```
 from tranche_structure import *
 
 check_if_valid = tranche_structure(pool_id ="Test Pool",
@@ -41,10 +41,11 @@ Pool Junior tranche thickness is 0.1
 Sum of All Tranches below senior-most tranche is 0.5
 Test Pool is a valid tranche structure
 Allowed senior-most tranche could be 50.0% of total pool
-'''
+```
 
 **this should generate an error as this is not a valid tranche structure**
 #this should generate assertion error "Tranche 0 should be thick enough to absorb pool expected losses"
+```
 check_if_valid = tranche_structure(pool_id ="Test Pool",
                                   N_borrowers = 5,
                                   pool_exposure = 1000000,
@@ -52,9 +53,11 @@ check_if_valid = tranche_structure(pool_id ="Test Pool",
                                   tranche_thickness = [0.050, 0.350],
                                   raters_assessment = [0.02, 0.06, 0.08, 0.10, 0.12, 0.13, 0.14],
                                   exposures=[100000, 200000, 200000, 200000, 300000])
+ ```
                                   
 **this should also throw an error**
 #this should generate assertion error "Total thickness of all tranches below the senior-most tranche should absorb pool worst-case loss"
+```
 check_if_valid = tranche_structure(pool_id ="Test Pool",
                                   N_borrowers = 5,
                                   pool_exposure = 1000000,
@@ -62,12 +65,12 @@ check_if_valid = tranche_structure(pool_id ="Test Pool",
                                   tranche_thickness = [0.10, 0.30],
                                   raters_assessment = [0.02, 0.06, 0.08, 0.10, 0.12, 0.13, 0.14],
                                   exposures=[100000, 200000, 200000, 200000, 300000])
-                                  
+ ```                                
 #### Step-4: Distribute periodic cashflows to tranche investors using waterfall mechanism
 ##### this function would internally call allocate_payment, cashflow_dist, make_periodic_payment functions
   
-######One can use their wallet addresses instead of these test addresses
-
+###### One can use their wallet addresses instead of these test addresses
+```
 contract_id = 'contract_1'
 current_payment_date = '1-Dec-2022'
 current_payment_amt = 3300000
@@ -181,3 +184,4 @@ Confirmed Transaction information for principal payments: {
 }
 Account balance: 13264653 microAlgos
 Fee: 0 microAlgos
+```
