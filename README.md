@@ -1,3 +1,6 @@
+![decredifi_code_overview_image](DeCrediFi_Code_Demo.gif?raw=true "DeCrediFi_Code_Overview")
+
+
 #### Step-1: decredify-core would need Algorand Sandbox Setup for recording the transactions on Algorand Testnet
 ```
 git clone https://github.com/algorand/sandbox.git
