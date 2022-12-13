@@ -1,6 +1,6 @@
 #### This image gives a quick code overview. Refer steps given below for step-wise instructions on how to run the code
 
-![decredifi_code_overview_image](DeCrediFi_Code_Demo.gif | width=250 "DeCrediFi_Code_Overview")
+<img src="DeCrediFi_Code_Demo.gif" width=40% height=40%>
 
 
 #### Step-1: decredify-core would need Algorand Sandbox Setup for recording the transactions on Algorand Testnet
