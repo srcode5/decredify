@@ -1,26 +1,28 @@
 #### Step-1: decredify-core would need Algorand Sandbox Setup for recording the transactions on Algorand Testnet
-
+'''
 git clone https://github.com/algorand/sandbox.git
 cd sandbox
 ./sandbox up testnet
-
+'''
 Refer https://github.com/algorand/sandbox for detailed instructions
 
 
 #### Step-2: Create Test wallet addresses (or use the ones we provide), and goto Testnet faucet to fund them
 #create few test accounts on TestNet and fund them
+'''
 from algosdk import account
 from algosdk import mnemonic
 
 private_key, public_address = account.generate_account()
 print("Base64 Private Key: {}\nPublic Algorand Address: {}\n".format(private_key, public_address))
 mnemonic.from_private_key(private_key)
-#https://dispenser.testnet.aws.algodev.network/ to goto faucet for dispensing miniAlgos
+'''
+##### https://dispenser.testnet.aws.algodev.network/ to goto faucet for dispensing miniAlgos
 
 
 #### Step-3: Check if a tranche structure is valid
 ##### This function will internally call four functions: posterior_pd, pool_wcl, pool_lgd, tranche_structure
-
+'''
 from tranche_structure import *
 
 check_if_valid = tranche_structure(pool_id ="Test Pool",
@@ -39,6 +41,7 @@ Pool Junior tranche thickness is 0.1
 Sum of All Tranches below senior-most tranche is 0.5
 Test Pool is a valid tranche structure
 Allowed senior-most tranche could be 50.0% of total pool
+'''
 
 **this should generate an error as this is not a valid tranche structure**
 #this should generate assertion error "Tranche 0 should be thick enough to absorb pool expected losses"
