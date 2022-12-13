@@ -1,4 +1,4 @@
-#### This image gives a quick code overview. Refer steps given below for step-wise instructions on how to run the code
+#### This image gives a quick code overview (See decredifi-core for the backend code). Refer steps given below for step-wise instructions on how to run the code
 
 <img src="DeCrediFi_Code_Demo.gif" width=40% height=40%>
 
